@@ -26,8 +26,11 @@ Traverse graph
 ```bash
 python3 cli.py traverse <start-node> <graph-file>
 ```
+ex: `python3 cli.py traverse bellman-ford graph.csv`
 
 Run MTR
 
 ```bash
 python3 cli.py mtr <dest-node>
+```
+ex: `python3 cli.py mtr cerf`
