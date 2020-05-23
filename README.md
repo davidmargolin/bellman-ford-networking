@@ -21,5 +21,5 @@ pip3 install -r requirements.txt
 
 # Running the CLI
 ```bash
-python3 cli.py <param>
+python3 cli.py <start-node> <graph-file> <out-filename>
 ```

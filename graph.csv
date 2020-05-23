@@ -1,0 +1,17 @@
+source,destination,cost
+bellman-ford,lovelace,80.738
+lovelace,bellman-ford,80.738
+bellman-ford,baran,70.687
+baran,bellman-ford,70.687
+lovelace,knuth,124.723
+knuth,lovelace,124.723
+lovelace,hopper,84.715
+hopper,lovelace,84.715
+baran,cerf,137.724
+cerf,baran,137.724
+knuth,hopper,100.756
+hopper,knuth,100.756
+knuth,cerf,138.712
+cerf,knuth,138.712
+hopper,cerf,78.762
+cerf,hopper,78.762
