@@ -20,6 +20,14 @@ pip3 install -r requirements.txt
 ```
 
 # Running the CLI
+
+Traverse graph
+
 ```bash
-python3 cli.py <start-node> <graph-file> <out-filename>
+python3 cli.py traverse <start-node> <graph-file>
 ```
+
+Run MTR
+
+```bash
+python3 cli.py mtr <dest-node>
