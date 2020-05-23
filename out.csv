@@ -1,0 +1,7 @@
+dest,via,cost,dest_ip
+bellman-ford,start,0,localhost
+lovelace,bellman-ford,80.738,10.10.4.1
+baran,bellman-ford,70.687,10.10.5.2
+knuth,lovelace,205.461,10.10.8.2
+hopper,lovelace,165.453,10.10.3.1
+cerf,baran,208.411,10.10.1.1
