@@ -1,6 +1,5 @@
 import click
 import csv
-import subprocess
 
 @click.group()
 def cli():
@@ -64,14 +63,19 @@ def traverse(start_node, input_graph):
 @cli.command()
 @click.argument('dest_node')
 def mtr(dest_node):
+    nodes = {}
+    # read in bellman ford output
     with open("out.csv") as graphfile:
         reader = csv.DictReader(graphfile)
         for row in reader:
-            if row["dest"] == dest_node:
-                click.echo("mtr expected to go through {} and take {}ms".format(row["via"], row["cost"]))
-                click.echo("running mtr")
-                bashCommand = "mtr {} --report --no-dns".format(row["dest_ip"])
-                process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+            nodes[row["dest"]] = row
+
+    paths = [nodes[dest_node]]
+    # append destination to path
+    while (paths[0]["via"] != "bellman-ford"):
+        paths.insert(0, nodes[paths[0]["via"]])
+    # print path
+    click.echo("\n".join("{}.\t{}\t{}\t{}ms".format(index+1,path["via"], path["dest_ip"], path["cost"]) for (index,path) in enumerate(paths)))
 
 if __name__ == "__main__":
     cli()
